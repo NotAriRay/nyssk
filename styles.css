@@ -1,0 +1,227 @@
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #def2f1;
+  color: #17252a;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #17252a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo img {
+  width: auto;
+  height: 60px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav li {
+  margin-left: 0;
+}
+
+nav a {
+  color: #feffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #3aafa9;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  nav .logo img {
+    max-width: 120px; /* Adjust logo size for smaller screens */
+  }
+}
+
+/* Section Styling */
+section {
+  padding: 6rem 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Increased delay */
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#home h1 {
+  font-size: 3rem; /* Adjusted size */
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Added text shadow for better visibility */
+}
+
+#home p {
+  font-size: 1.25rem; /* Adjusted size */
+  line-height: 1.8; /* Maintain line spacing */
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); /* Added text shadow for better visibility */
+}
+
+/* Sections */
+#tests,
+#schedule,
+#info {
+  padding: 4rem 2rem;
+  background-color: #feffff;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove bullets from test dates */
+#tests ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* School Schedule */
+#schedule {
+  padding: 4rem 2rem;
+  background-color: #feffff;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  min-width: 700px;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #17252a;
+}
+
+th {
+  background-color: #2b7a78;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #def2f1;
+  color: #17252a;
+}
+
+td[colspan] {
+  background-color: #3aafa9;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #schedule {
+    overflow-x: auto;
+  }
+
+  table {
+    width: auto;
+  }
+
+  th,
+  td {
+    font-size: 14px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #17252a;
+  color: #feffff;
+}
+
+#home {
+  background-color: #3aafa9;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  height: 100vh; /* Full height */
+  text-align: center; /* Center text within the section */
+}
+
+.content {
+  max-width: 600px; /* Limit the width of the content */
+}
+
+.scroll-indicator {
+  font-size: 3rem; /* Size of the arrow */
+  color: white; /* Arrow color */
+  margin-top: 4rem; /* Space above the arrow */
+  animation: bounce 1s infinite; /* Animation effect */
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Move up */
+  }
+  60% {
+    transform: translateY(-5px); /* Move down */
+  }
+}
