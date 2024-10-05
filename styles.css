@@ -86,7 +86,7 @@ section {
   text-align: center;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease; /* Increased delay */
+  transition: opacity 2s ease, transform 2s ease; /* Increased delay */
 }
 
 section.visible {
@@ -223,5 +223,42 @@ footer {
   }
   60% {
     transform: translateY(-5px); /* Move down */
+  }
+}
+
+#tests table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  min-width: 400px; /* Ensure minimum width for scroll */
+}
+
+#tests th,
+#tests td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #17252a;
+}
+
+#tests th {
+  background-color: #2b7a78;
+  color: white;
+  font-weight: bold;
+}
+
+#tests td {
+  background-color: #def2f1;
+  color: #17252a;
+}
+
+/* Make the table responsive on smaller screens */
+@media only screen and (max-width: 768px) {
+  #tests table {
+    width: auto; /* Allow table to resize for scrolling */
+  }
+
+  #tests th,
+  #tests td {
+    font-size: 14px; /* Make text slightly smaller */
   }
 }
